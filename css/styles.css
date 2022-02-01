@@ -1,0 +1,217 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap");
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Red Hat Display", sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-image: url(../images/pattern-background-desktop.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: #e0e8ff;
+}
+
+.card {
+  -webkit-box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+          box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+  -webkit-animation: cardAnimation 1s;
+          animation: cardAnimation 1s;
+  background-color: white;
+  font-weight: 500;
+  border-radius: 20px;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  text-align: center;
+  overflow: hidden;
+}
+
+.card__img {
+  width: 100%;
+}
+
+.card__body {
+  padding: 2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  gap: 1em;
+}
+
+.card__h1 {
+  font-size: 1.5em;
+  margin: 0;
+  margin-top: 1em;
+  padding: 0;
+  line-height: 0;
+  color: #1f2f56;
+  font-weight: 900;
+}
+
+.card__p {
+  color: #7280a7;
+}
+
+.card__plan {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #f5f7ff;
+  color: #7280a7;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1em;
+  padding-inline: 1em;
+  border-radius: 20px;
+}
+
+.card__current-plan {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  color: #1f2f56;
+  font-weight: 900;
+}
+
+.card__price {
+  color: #7280a7;
+  font-weight: 500;
+}
+
+.card__change-plan {
+  margin-left: 3em;
+  color: #3829e0;
+  -webkit-transition: -webkit-transform 100ms ease-in-out;
+  transition: -webkit-transform 100ms ease-in-out;
+  transition: transform 100ms ease-in-out;
+  transition: transform 100ms ease-in-out, -webkit-transform 100ms ease-in-out;
+  font-weight: 700;
+}
+
+.card__change-plan:hover {
+  -webkit-transform: translateY(-3px) scale(1.05);
+          transform: translateY(-3px) scale(1.05);
+  color: #766cf1;
+}
+
+.card__btn {
+  width: 100%;
+  padding-block: 1.5em;
+  border-radius: 10px;
+  border: 0;
+  font-weight: 900;
+  font-size: 1em;
+}
+
+.card__btn:hover {
+  -webkit-transition: -webkit-transform 150ms ease-in-out;
+  transition: -webkit-transform 150ms ease-in-out;
+  transition: transform 150ms ease-in-out;
+  transition: transform 150ms ease-in-out, -webkit-transform 150ms ease-in-out;
+  -webkit-transform: translateY(-5px) scale(1.05);
+          transform: translateY(-5px) scale(1.05);
+}
+
+.card__btn--proceed {
+  background-color: #3829e0;
+  color: #f5f7ff;
+  -webkit-box-shadow: black 0px 20px 40px -10px;
+          box-shadow: black 0px 20px 40px -10px;
+}
+
+.card__btn--proceed:hover {
+  background-color: #766cf1;
+}
+
+.card__btn--cancel {
+  background: inherit;
+  color: #7280a7;
+}
+
+.card__btn--cancel:hover {
+  color: black;
+}
+
+@-webkit-keyframes cardAnimation {
+  0% {
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+  }
+  100% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+}
+
+@keyframes cardAnimation {
+  0% {
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+  }
+  100% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+}
+
+@media (max-width: 375px) {
+  body {
+    background-image: url(../images/pattern-background-mobile.svg);
+  }
+}
+
+.attribution {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  font-size: 11px;
+  text-align: center;
+  background: #222;
+  width: 100%;
+  color: white;
+}
+
+.attribution a {
+  color: #3e52a3;
+}
+/*# sourceMappingURL=styles.css.map */

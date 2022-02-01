@@ -1,0 +1,129 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: $font-family;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url(../images/pattern-background-desktop.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: $pale-blue;
+}
+
+.card {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  transform: translateY(0px);
+  animation: cardAnimation 1s;
+  background-color: white;
+  font-weight: 500;
+  border-radius: 20px;
+  width: min-content;
+  height: max-content;
+  text-align: center;
+  overflow: hidden;
+  &__img {
+    width: 100%;
+  }
+  &__body {
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    flex: 1;
+    gap: 1em;
+  }
+  &__h1 {
+    font-size: 1.5em;
+    margin: 0;
+    margin-top: 1em;
+    padding: 0;
+    line-height: 0;
+    color: $dark-blue;
+    font-weight: 900;
+  }
+  &__p {
+    color: $desaturated-blue;
+  }
+  &__plan {
+    display: flex;
+    background-color: $very-pale-blue;
+    color: $desaturated-blue;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1em;
+    padding-inline: 1em;
+    border-radius: 20px;
+  }
+  &__current-plan {
+    width: max-content;
+    color: $dark-blue;
+    font-weight: 900;
+  }
+  &__price {
+    color: $desaturated-blue;
+    font-weight: 500;
+  }
+  &__change-plan {
+    margin-left: 3em;
+    color: $bright-blue;
+    transition: transform 100ms ease-in-out;
+    font-weight: 700;
+    &:hover {
+      transform: translateY(-3px) scale(1.05);
+      color: $blue-ish;
+    }
+  }
+  &__btn {
+    width: 100%;
+    padding-block: 1.5em;
+    border-radius: 10px;
+    border: 0;
+    font-weight: 900;
+    font-size: 1em;
+    &:hover {
+      transition: transform 150ms ease-in-out;
+      transform: translateY(-5px) scale(1.05);
+    }
+    &--proceed {
+      background-color: $bright-blue;
+      color: $very-pale-blue;
+      box-shadow: black 0px 20px 40px -10px;
+      &:hover {
+        background-color: $blue-ish;
+      }
+    }
+    &--cancel {
+      background: inherit;
+      color: $desaturated-blue;
+      &:hover {
+        color: black;
+      }
+    }
+  }
+}
+
+@keyframes cardAnimation {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+@media (max-width: 375px) {
+  body {
+    background-image: url(../images/pattern-background-mobile.svg);
+  }
+}
